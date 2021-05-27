@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+</head>
+<body>
+    <h1>I'm thinking of a number between 1 to 10</h1>
+    <h2>You hav 3 guesses to tell it correctly</h2>
+    <button onclick="guessTheNum()">Press here</button>
+    <p id="guess"></p>
+    <p id="clue"></p>
+
+    <script>
+        function guessTheNum() {
+            var num = Math.floor(Math.random() * 11);
+            var flag = 0;
+             console.log(num);
+             var guess = prompt("Please Enter your Guess","5");
+            for (let index = 0; index < 2; index++) {
+                console.log(index);
+                    if(guess>num){
+                        guess = prompt("Your guess is higer than I thought","5");
+                    }
+                    else{
+                       guess = prompt("Your guess is lesser than i thought","5");
+                    }
+                    if(guess == num){
+                    flag = 1;
+                    break;
+                }
+                
+            }
+            if(flag==1){
+                alert("You Guessed it right");
+            }
+            else{
+                alert("Better luck next time :( ")
+            }
+        
+        }
+    </script>
+</body>
+</html>
+
+
